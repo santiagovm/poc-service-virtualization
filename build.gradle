@@ -26,6 +26,9 @@ dependencies {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 	testImplementation 'io.projectreactor:reactor-test'
+	testImplementation 'com.github.tomakehurst:wiremock:2.26.3'
+	testImplementation 'org.springframework.cloud:spring-cloud-contract-wiremock:2.2.3.RELEASE'
+
 }
 
 test {
