@@ -1,0 +1,16 @@
+{
+  "request": {
+    "urlPath": "/posts/333",
+    "method": "GET"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "id": "333",
+      "title": "foo title"
+    },
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  }
+}

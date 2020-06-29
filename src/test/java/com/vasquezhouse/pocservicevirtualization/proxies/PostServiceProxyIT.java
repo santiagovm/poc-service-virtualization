@@ -11,12 +11,6 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
-import static com.github.tomakehurst.wiremock.client.WireMock.get;
-import static com.github.tomakehurst.wiremock.client.WireMock.notFound;
-import static com.github.tomakehurst.wiremock.client.WireMock.serverError;
-import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
-import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -51,15 +45,6 @@ public class PostServiceProxyIT {
     @Test
     public void verifyExistingPost() {
 
-        // arrange
-        stubFor(get(urlEqualTo("/posts/333"))
-                .willReturn(
-                        aResponse()
-                                .withHeader("Content-Type", "application/json;charset=UTF-8")
-                                .withBody("{\"id\" : \"333\", \"title\" : \"foo title\"}")
-                )
-        );
-
         // act
         PostInfo post = postService.findByPostId("333").block();
 
@@ -71,11 +56,6 @@ public class PostServiceProxyIT {
     @Test
     public void verifyNonExistingPost() {
 
-        // arrange
-        stubFor(get(urlEqualTo("/posts/444"))
-                .willReturn(notFound())
-        );
-
         // act and assert
         Exception exception = assertThrows(
                 PostNotFoundException.class,
@@ -85,11 +65,6 @@ public class PostServiceProxyIT {
 
     @Test
     public void verifyInternalError() {
-
-        // arrange
-        stubFor(get(urlEqualTo("/posts/555"))
-                .willReturn(serverError())
-        );
 
         // act and assert
         Exception exception = assertThrows(
