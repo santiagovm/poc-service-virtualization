@@ -1,0 +1,34 @@
+{
+  "id" : "4d8c62dc-8d7f-4792-b96e-30f8334d28d6",
+  "name" : "posts_1",
+  "request" : {
+    "url" : "/posts/1",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "bodyFileName" : "posts_1-4d8c62dc-8d7f-4792-b96e-30f8334d28d6.json",
+    "headers" : {
+      "Date" : "Mon, 29 Jun 2020 02:09:22 GMT",
+      "Content-Type" : "application/json; charset=utf-8",
+      "Set-Cookie" : "__cfduid=d527b90fa0b8ad559441095f952b8b7ae1593396562; expires=Wed, 29-Jul-20 02:09:22 GMT; path=/; domain=.typicode.com; HttpOnly; SameSite=Lax",
+      "X-Powered-By" : "Express",
+      "Vary" : "Origin, Accept-Encoding",
+      "Cache-Control" : "max-age=43200",
+      "Pragma" : "no-cache",
+      "Expires" : "-1",
+      "X-Content-Type-Options" : "nosniff",
+      "Etag" : "W/\"124-yiKdLzqO5gfBrJFrcdJ8Yq0LGnU\"",
+      "Via" : "1.1 vegur",
+      "CF-Cache-Status" : "HIT",
+      "Age" : "656",
+      "cf-request-id" : "039f6f24200000f025c9114200000001",
+      "Expect-CT" : "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+      "Server" : "cloudflare",
+      "CF-RAY" : "5aac1ae6989bf025-EWR"
+    }
+  },
+  "uuid" : "4d8c62dc-8d7f-4792-b96e-30f8334d28d6",
+  "persistent" : true,
+  "insertionIndex" : 4
+}
