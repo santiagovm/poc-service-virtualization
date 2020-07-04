@@ -1,8 +1,9 @@
 resources:
   - name: source-code-from-github
     type: git
-    source: https://github.com/santiagovm/poc-service-virtualization
-    branch: spike-ci
+    source:
+      uri: https://github.com/santiagovm/poc-service-virtualization
+      branch: spike-ci
 
 jobs:
   - name: build-and-test
@@ -17,10 +18,10 @@ jobs:
             type: docker-image
             source:
               repository: java
-              tag: 11
+              tag: 11-jdk
           inputs:
             - name: source-code-from-github
           caches:
-            - path: source-code-from-github/.m2
+            - path: source-code-from-github/.gradle
           run:
             path: ./source-code-from-github/ci/build-and-test.sh
