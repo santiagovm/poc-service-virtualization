@@ -16,9 +16,7 @@ jobs:
           platform: linux
           image_resource:
             type: registry-image
-            source:
-              repository: openjdk
-              tag: 11-jdk
+            source: {repository: golang}
           inputs:
             - name: source-code-from-github
           caches:
