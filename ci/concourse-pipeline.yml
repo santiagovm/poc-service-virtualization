@@ -15,10 +15,10 @@ jobs:
         config:
           platform: linux
           image_resource:
-            type: docker-image
+            type: registry-image
             source:
-              repository: java
-              tag: 8
+              repository: openjdk
+              tag: 11-jdk
           inputs:
             - name: source-code-from-github
           caches:
