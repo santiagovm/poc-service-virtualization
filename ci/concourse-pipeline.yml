@@ -1,0 +1,26 @@
+resources:
+  - name: source-code-from-github
+    type: git
+    source: https://github.com/santiagovm/poc-service-virtualization
+    branch: spike-ci
+
+jobs:
+  - name: build-and-test
+    public: true
+    plan:
+      - get: source-code-from-github
+        trigger: true
+      - task: run-build-and-test
+        config:
+          platform: linux
+          image_resource:
+            type: docker-image
+            source:
+              repository: java
+              tag: 11
+          inputs:
+            - name: source-code-from-github
+          caches:
+            - path: source-code-from-github/.m2
+          run:
+            path: ./source-code-from-github/ci/build-and-test.sh
